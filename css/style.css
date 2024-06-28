@@ -44,6 +44,14 @@ body {
     margin-bottom: 20px;
 }
 
+.content-item {
+    display: none;
+}
+
+.content-item.content-item__active {
+    display: inline-block;
+}
+
 .header {
     min-height: 100vh;
     position: relative;
@@ -85,8 +93,27 @@ body {
     right: 0;
     bottom: 0;
     width: 100%;
-    background: linear-gradient(180deg, #CADBEB 0%, rgba(235, 235, 235, 0.00) 100%);
     z-index: -2;
+}
+
+.header__content-images:has(.color--blue.content-item.content-item__active)::before {
+    background: linear-gradient(180deg, #CADBEB 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--black.content-item.content-item__active)::before {
+    background: linear-gradient(180deg, #B6B6B6 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--red.content-item.content-item__active)::before {
+    background: linear-gradient(180deg, #F3D6D1 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--green.content-item.content-item__active)::before {
+    background: linear-gradient(180deg, #DDEAD9 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--white.content-item.content-item__active)::before {
+    background: linear-gradient(180deg, #FAFAFA 0%, rgba(235, 235, 235, 0.00)100%);
 }
 
 .title {
@@ -150,6 +177,10 @@ body {
     padding: 50px 55px;
 }
 
+.choose__color-btn--active {
+    display: none;
+}
+
 .composition {
     margin-bottom: 180px;
 }
@@ -189,7 +220,7 @@ body {
 }
 
 .case__text {
-    min-width: 825px;
+    max-width: 825px;
     margin: 0 auto 40px;
 }
 
@@ -260,13 +291,173 @@ body {
     padding: 20px 0;
 }
 
-.footer__list{
+.footer__list {
     padding-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0 20px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 
+@media (max-width: 1469px) {
+    .header__content-images img {
+        max-width: 100%;
+    }
 
+    .choose-color__list {
+        flex-wrap: wrap;
+    }
+
+    .title {
+        font-size: 180px;
+        transform: translate(129px, 29px);
+    }
+}
+
+@media (max-width: 1349px) {
+    .title {
+        transform: none;
+        font-size: 140px;
+        text-align: center;
+        padding-top: 20vh;
+        left: 0;
+        right: 0;
+    }
+
+    .title--pod {
+        z-index: 1;
+    }
+
+    .title--s {
+        transform: none;
+        ;
+    }
+
+    .title--m {
+        transform: none;
+
+    }
+
+    .title--ax {
+        transform: none;
+    }
+}
+
+@media (max-width: 930px) {
+
+    .title {
+        position: relative;
+        font-size: 100px;
+        padding-top: 0;
+    }
+
+    .title--m {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choose-color {
+        padding-bottom: 60px;
+    }
+
+    .choose-color__list {
+        gap: 16px;
+    }
+
+    .main__title {
+        font-size: 36px;
+    }
+
+    .composition {
+        margin-bottom: 60px;
+    }
+
+    .case {
+        padding: 60px 0;
+    }
+
+    .energy__title {
+        padding-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    .energy__num {
+        font-size: 110px;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 58px;
+    }
+}
+
+@media (max-width: 560px) {
+    .choose-color__text {
+        margin-bottom: 40px;
+    }
+
+    .choose-color {
+        padding-bottom: 40px;
+    }
+
+    .case {
+        padding: 40px 0;
+    }
+
+    .composition__inner-text p {
+        width: 100%;
+    }
+
+    .composition__inner {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .menu__list {
+        flex-wrap: wrap;
+        gap: 20px 40px;
+    }
+
+    .menu__item-btn {
+        margin-left: auto;
+    }
+
+    .menu__item-btn button {
+        width: 250px;
+    }
+
+    .menu__item::first-child {
+        margin-left: auto;
+    }
+
+    .header__top {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .main__title,
+    .choose-color__title {
+        font-size: 28px;
+    }
+
+    .energy__num {
+        font-size: 92px;
+    }
+
+    .case img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 404px) {
+    .title {
+        font-size: 50px;
+    }
+}
